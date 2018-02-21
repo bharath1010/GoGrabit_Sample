@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  GoGrabit_Sample
+//
+//  Created by macbook on 21/02/18.
+//  Copyright © 2018 macbook. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "sharedDelegate.h"
+#import "AppDelegate.h"
+
+sharedDelegate *ObjShared;
+
+#define SERVERPATH @"http://dev7-0.ditcanada.com/gedit/trunk/api/apidoc/"
+
+#endif /* PrefixHeader_pch */

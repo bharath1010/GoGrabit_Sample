@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+        <array key="SFUIDisplay-Semibold.otf">
+            <string>SFUIDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZrQ-cj-kzD"/>
+                        <viewControllerLayoutGuide type="bottom" id="cYg-5H-YTl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEO-Xm-RnW">
+                                <rect key="frame" x="16" y="263" width="51" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="z1y-Bw-tCo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="20"/>
+                                <color key="textColor" red="0.41960784313725491" green="0.43529411764705883" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkS-bS-aND">
+                                <rect key="frame" x="16" y="338" width="99" height="21"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="20"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.43529411759999997" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Equ-UI-HJH">
+                                <rect key="frame" x="16" y="292" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OxD-w3-l8x"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vh1-eh-uPn"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pei-WA-OoP">
+                                <rect key="frame" x="16" y="367" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="15B-Fp-DCx"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViB-se-KMi">
+                                <rect key="frame" x="16" y="428" width="137" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dwv-Xg-KdI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="18"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" red="0.41960784309999999" green="0.43529411759999997" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ise-2C-8tt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owm-6a-fcI">
+                                <rect key="frame" x="259" y="422" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.70588235294117641" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="2uH-o0-q8M"/>
+                                    <constraint firstAttribute="height" constant="40" id="uNY-1E-RN4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="20"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsB-A6-7bU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rOC-Zj-3by">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QyX-on-ei9"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Don't have an account? ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.41960784313725491" green="0.43529411764705883" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Sign Up">
+                                            <attributes>
+                                                <color key="NSColor" red="0.23137254901960785" green="0.70588235294117641" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="16" name="SFUIDisplay-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9P-VY-pGW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gograbit_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vld-5F-Dvi">
+                                <rect key="frame" x="87" y="67" width="201" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vua-Mg-utO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ds-Nd-sDW">
+                                <rect key="frame" x="312" y="369" width="38" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="25" id="jYo-zS-qX4"/>
+                                </constraints>
+                                <state key="normal" image="eye.png"/>
+                                <connections>
+                                    <action selector="hiddenText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ONL-RC-h0Z"/>
+                                    <action selector="hiddenTextFalse:" destination="BYZ-38-t0r" eventType="touchDown" id="Fb1-vq-G9l"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Equ-UI-HJH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0bt-2j-ZZn"/>
+                            <constraint firstItem="0ds-Nd-sDW" firstAttribute="top" secondItem="Equ-UI-HJH" secondAttribute="bottom" constant="47" id="9ce-Uj-xwf"/>
+                            <constraint firstItem="owm-6a-fcI" firstAttribute="trailing" secondItem="rOC-Zj-3by" secondAttribute="trailing" id="A6D-6t-8HV"/>
+                            <constraint firstItem="Pei-WA-OoP" firstAttribute="leading" secondItem="ViB-se-KMi" secondAttribute="leading" id="DvI-gr-19G"/>
+                            <constraint firstAttribute="trailing" secondItem="0ds-Nd-sDW" secondAttribute="trailing" constant="25" id="EJ4-ap-CcS"/>
+                            <constraint firstItem="ViB-se-KMi" firstAttribute="top" secondItem="owm-6a-fcI" secondAttribute="top" constant="6" id="Gem-3z-T20"/>
+                            <constraint firstItem="Equ-UI-HJH" firstAttribute="trailing" secondItem="Pei-WA-OoP" secondAttribute="trailing" id="HBw-GG-0oP"/>
+                            <constraint firstItem="owm-6a-fcI" firstAttribute="top" secondItem="0ds-Nd-sDW" secondAttribute="bottom" constant="28" id="I3N-cR-NbR"/>
+                            <constraint firstItem="Equ-UI-HJH" firstAttribute="leading" secondItem="YkS-bS-aND" secondAttribute="leading" id="JP2-3J-gTO"/>
+                            <constraint firstItem="yEO-Xm-RnW" firstAttribute="top" secondItem="ZrQ-cj-kzD" secondAttribute="bottom" constant="243" id="KKE-hA-xL1"/>
+                            <constraint firstItem="0ds-Nd-sDW" firstAttribute="centerY" secondItem="Pei-WA-OoP" secondAttribute="centerY" constant="-0.5" id="Pes-DB-xw5"/>
+                            <constraint firstItem="Equ-UI-HJH" firstAttribute="top" secondItem="yEO-Xm-RnW" secondAttribute="bottom" constant="8" symbolic="YES" id="Rh5-db-c5y"/>
+                            <constraint firstItem="YkS-bS-aND" firstAttribute="top" secondItem="Equ-UI-HJH" secondAttribute="bottom" constant="16" id="SCX-Lo-RZT"/>
+                            <constraint firstItem="yEO-Xm-RnW" firstAttribute="leading" secondItem="Equ-UI-HJH" secondAttribute="leading" id="SD4-fk-5EW"/>
+                            <constraint firstItem="Vld-5F-Dvi" firstAttribute="centerX" secondItem="Equ-UI-HJH" secondAttribute="centerX" id="T62-X3-uMa"/>
+                            <constraint firstItem="Vld-5F-Dvi" firstAttribute="top" secondItem="ZrQ-cj-kzD" secondAttribute="bottom" constant="47" id="Tcq-4g-PT7"/>
+                            <constraint firstItem="Vld-5F-Dvi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="87" id="VDB-Hm-7nM"/>
+                            <constraint firstItem="owm-6a-fcI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="ZIT-oR-obd"/>
+                            <constraint firstItem="ViB-se-KMi" firstAttribute="leading" secondItem="rOC-Zj-3by" secondAttribute="leading" id="ZL3-FK-tzV"/>
+                            <constraint firstItem="YkS-bS-aND" firstAttribute="leading" secondItem="Pei-WA-OoP" secondAttribute="leading" id="bhy-w7-iTe"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="YkS-bS-aND" secondAttribute="trailing" constant="260" id="blH-kp-s6F"/>
+                            <constraint firstItem="Pei-WA-OoP" firstAttribute="trailing" secondItem="owm-6a-fcI" secondAttribute="trailing" id="cfm-Bj-9nf"/>
+                            <constraint firstAttribute="bottom" secondItem="rOC-Zj-3by" secondAttribute="bottom" constant="20" symbolic="YES" id="eCr-fy-UmU"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ViB-se-KMi" secondAttribute="trailing" constant="20" symbolic="YES" id="fcr-R1-330"/>
+                            <constraint firstItem="Pei-WA-OoP" firstAttribute="top" secondItem="YkS-bS-aND" secondAttribute="bottom" constant="8" symbolic="YES" id="fon-JE-HME"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="yEO-Xm-RnW" secondAttribute="trailing" constant="308" id="gEh-r9-avl"/>
+                            <constraint firstItem="yEO-Xm-RnW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rvO-RO-dWY"/>
+                            <constraint firstItem="ViB-se-KMi" firstAttribute="top" secondItem="Pei-WA-OoP" secondAttribute="bottom" constant="31" id="vFd-EK-pla"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="Pei-WA-OoP" id="SPU-R9-vHf"/>
+                        <outlet property="signIn" destination="owm-6a-fcI" id="31G-wP-ysi"/>
+                        <outlet property="username" destination="Equ-UI-HJH" id="Xuu-Ia-Bhh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.399999999999999" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="eye.png" width="38" height="30"/>
+        <image name="gograbit_logo.png" width="396" height="173"/>
+    </resources>
+</document>
