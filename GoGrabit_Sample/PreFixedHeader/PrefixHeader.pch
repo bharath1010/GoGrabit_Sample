@@ -14,6 +14,6 @@
 
 sharedDelegate *ObjShared;
 
-#define SERVERPATH @"http://dev7-0.ditcanada.com/gedit/trunk/api/apidoc/"
+#define SERVERPATH @"http://dev7-0.ditcanada.com/gedit/trunk/api/V1/"
 
 #endif /* PrefixHeader_pch */
