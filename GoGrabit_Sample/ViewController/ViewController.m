@@ -88,7 +88,7 @@
     }else{
         //Vaildation passed
         //Login API CAll Method
-        [activity startAnimating];
+//        [activity startAnimating];
         [self LoginAPICall];
     }
 }

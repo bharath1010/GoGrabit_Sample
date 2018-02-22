@@ -155,7 +155,7 @@
 				FA66F28C203D81280027F49D /* PreFixedHeader */,
 				FA66F28A203D81080027F49D /* AppDelegate */,
 				FA66F28B203D811A0027F49D /* ViewController */,
-				FA66F289203D80F30027F49D /* Shared Class */,
+				FA66F289203D80F30027F49D /* Service class */,
 				FA66F252203D353D0027F49D /* Main.storyboard */,
 				FA66F255203D353D0027F49D /* Assets.xcassets */,
 				FA66F257203D353D0027F49D /* LaunchScreen.storyboard */,
@@ -184,13 +184,13 @@
 			path = GoGrabit_SampleUITests;
 			sourceTree = "<group>";
 		};
-		FA66F289203D80F30027F49D /* Shared Class */ = {
+		FA66F289203D80F30027F49D /* Service class */ = {
 			isa = PBXGroup;
 			children = (
 				FA66F27F203D36490027F49D /* sharedDelegate.h */,
 				FA66F280203D36490027F49D /* sharedDelegate.m */,
 			);
-			path = "Shared Class";
+			path = "Service class";
 			sourceTree = "<group>";
 		};
 		FA66F28A203D81080027F49D /* AppDelegate */ = {

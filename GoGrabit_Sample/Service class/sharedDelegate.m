@@ -31,6 +31,8 @@
 
 //AlertView Controller Method
 + (void) showAlert:(NSString *)title withMessage:(NSString *)msg withView:(UIViewController *)view {
+    
+    //Alert view declaration
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* okButton = [UIAlertAction
                                    actionWithTitle:@"OK"
@@ -39,11 +41,9 @@
                                    {
                                        
                                    }];
-    
     [alert addAction:okButton];
     
     [view presentViewController:alert animated:YES completion:nil];
-                                
 }
 
 
@@ -58,7 +58,10 @@
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVERPATH,domainStr]];
+    
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+    
+    //Adding parameter to Requests
     [req setHTTPMethod:@"POST"];
     [req addValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
     [req addValue:auth forHTTPHeaderField:@"Authorization"];
@@ -74,12 +77,17 @@
         [AppDelegate showAlert:@"Internet Error" withMessage:@"Please check your network connection"];
     }
     if ([response statusCode] >= 400){
-        [AppDelegate showAlert:@"Error" withMessage:@"Please check for Vaild credentials"];
+//        [AppDelegate showAlert:@"Error" withMessage:@"Please check for Vaild credentials"];
+        
+         [sharedDelegateid failResponseFromServer];
+        
     }else{
         if ([sharedDelegate respondsToSelector:@selector(successfulResponseFromServer:)]){
+            //success method
             [sharedDelegateid successfulResponseFromServer:json];
             NSLog(@"success");
         }else if ([sharedDelegate respondsToSelector:@selector(failResponseFromServer)]){
+            //Failure method
             [sharedDelegateid failResponseFromServer];
             NSLog(@"error");
         }

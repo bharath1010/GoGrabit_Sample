@@ -10,11 +10,16 @@
 
 @interface ViewController : UIViewController{
     
+    //Declaring TextField
     __weak IBOutlet UITextField *username;
     __weak IBOutlet UITextField *password;
+    //Declaring Button
     IBOutlet UIButton *signIn;
-    UIActivityIndicatorView *activity;
+    //Declaring activityindicator
+//    UIActivityIndicatorView *activity;
 }
+
+//Button click methods
 - (IBAction)hiddenText:(id)sender;
 - (IBAction)hiddenTextFalse:(id)sender;
 - (IBAction)forgotPassword:(id)sender;

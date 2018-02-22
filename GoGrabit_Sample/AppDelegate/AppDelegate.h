@@ -12,7 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-+ (void) showAlert:(NSString *)title withMessage:(NSString *) msg;
+//AlertView method
++(void) showAlert:(NSString *)title withMessage:(NSString *) msg;
 
 
 @end
