@@ -46,6 +46,26 @@
     [view presentViewController:alert animated:YES completion:nil];
 }
 
+-(void) startActivity:(UIView *)view{
+    //AcivityIndicator allocation
+    activity = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    //activity view allocation for unaccessing
+    activityView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
+    //adding to current view
+    [view addSubview:activityView];
+    activityView.hidden = false;
+    activity.center=activityView.center;
+    //adding activityindicator to created view
+    [activityView addSubview:activity];
+    //Start activity indicator
+    [activity startAnimating];
+}
+
+-(void) stopactivity{
+    [activity stopAnimating];
+    activityView.hidden = true;
+    [activityView removeFromSuperview];
+}
 
 #pragma mark - W.S call
 
@@ -72,15 +92,20 @@
         json = [NSJSONSerialization JSONObjectWithData:res
                                                options:kNilOptions
                                                  error:&sserror];
+//        NSLog(@"Json---->%@",json);
     }else{
         NSLog(@"log");
         [AppDelegate showAlert:@"Internet Error" withMessage:@"Please check your network connection"];
     }
     if ([response statusCode] >= 400){
-//        [AppDelegate showAlert:@"Error" withMessage:@"Please check for Vaild credentials"];
         
-         [sharedDelegateid failResponseFromServer];
-        
+        if (json !=nil) {
+            //response from server
+            [sharedDelegateid successfulResponseFromServer:json];
+        }else{
+            //No response from server
+            [sharedDelegateid failResponseFromServer];
+        }
     }else{
         if ([sharedDelegate respondsToSelector:@selector(successfulResponseFromServer:)]){
             //success method

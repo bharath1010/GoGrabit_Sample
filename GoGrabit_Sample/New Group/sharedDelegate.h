@@ -19,7 +19,10 @@
 
 @end
 
-@interface sharedDelegate : NSObject
+@interface sharedDelegate : NSObject{
+     UIActivityIndicatorView *activity;
+    UIView *activityView;
+}
 
 //Self delegate
 @property (strong, nonatomic) id <SharedDelegate> sharedDelegateid;
@@ -31,6 +34,10 @@
 
 //Alertview
 + (void) showAlert:(NSString *)title withMessage:(NSString *) msg withView:(UIViewController *)view;
+
+-(void) startActivity:(UIView *)view;
+-(void) stopactivity;
+
 
 //AFNetworking Webservice call
 //Post method

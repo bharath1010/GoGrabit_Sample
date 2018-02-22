@@ -19,15 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Signin Button border curves
+    //Signin Button corner radius 
     signIn.layer.cornerRadius = 10;
     signIn.layer.masksToBounds = YES;
-    
-    //AcivityIndicator 
-//    activity = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//    activity.center=self.view.center;
-//    [self.view addSubview:activity];
-//    [activity stopAnimating];
     
     //Crashlytics check With button
 //    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -36,7 +30,6 @@
 //    [button addTarget:self action:@selector(crashButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:button];
 
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -48,7 +41,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //Shared
+    //Shared delegate intialize
     ObjShared = nil;
     ObjShared = [sharedDelegate sharedInstance];
     ObjShared.sharedDelegateid = nil;
@@ -88,7 +81,10 @@
     }else{
         //Vaildation passed
         //Login API CAll Method
-//        [activity startAnimating];
+        
+        //To start activity indicator
+        [ObjShared startActivity:self.view];
+        
         [self LoginAPICall];
     }
 }
@@ -125,30 +121,31 @@
 
 #pragma mark -W.S Delegate Call
 - (void) successfulResponseFromServer:(NSDictionary *)dict{
+    //To Stop activity indicator
+    [ObjShared stopactivity];
 
     //Response from sever
-    if ([[NSString stringWithFormat:@"%@",[dict valueForKey:@"status"]] isEqualToString:@"true"]){
-        
+    if ([[NSString stringWithFormat:@"%@",[dict valueForKey:@"status"]] isEqualToString:@"1"]){
         //Success response
         [sharedDelegate showAlert:@"Successfully" withMessage:[dict valueForKey:@"message"] withView:self];
     }else{
-        
         //failure responses
-        [sharedDelegate showAlert:@"Invaild" withMessage:[dict valueForKey:@"message"] withView:self];
+        [sharedDelegate showAlert:@"Error" withMessage:[dict valueForKey:@"message"] withView:self];
     }
-   
-//    [activity stopAnimating];
 }
 - (void)failResponseFromServer{
-
-    [AppDelegate showAlert:@"Error" withMessage:@"Please enter the correct E-mail-Id or Password"];
-//    [activity stopAnimating];
+    //To Stop activity indicator
+    [ObjShared stopactivity];
+    
+    //falilure response from sever
+    [AppDelegate showAlert:@"Error" withMessage:@"Please Check the Internet"];
 }
 
 //Return value of textfield
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField
 {
+    //Navigating between textfield and resigning
     if (textField == username) {
         [textField resignFirstResponder];
         [password becomeFirstResponder];
@@ -157,6 +154,12 @@
         [textField resignFirstResponder];
     }
     return YES;
+}
+
+-(void)dealloc{
+    //dealloc the objects
+    ObjShared = nil;
+    ObjShared.sharedDelegateid = nil;
 }
 
 @end
